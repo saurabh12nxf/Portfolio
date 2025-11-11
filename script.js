@@ -159,32 +159,32 @@ window.addEventListener('scroll', () => {
 // ===== Project Modal =====
 const projectData = [
     {
-        title: 'E-Commerce Platform',
-        description: 'A full-featured e-commerce platform with user authentication, product management, shopping cart, and secure payment integration using Stripe. Built with React for the frontend and Node.js/Express for the backend, with MongoDB as the database.',
-        tech: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe API', 'JWT Authentication'],
+        title: 'Krishi-Mitra',
+        description: 'Empowering Farmers Through Smart Agriculture. A comprehensive platform that leverages technology to help farmers make informed decisions, access market information, and improve agricultural productivity through data-driven insights.',
+        tech: ['Python', 'TypeScript', 'JavaScript', 'Jupyter Notebook', 'HTML & CSS'],
         demo: '#',
-        github: '#'
+        github: 'https://github.com/saurabh12nxf/Krishi-Mitra.git'
     },
     {
-        title: 'Task Management App',
-        description: 'A collaborative task management application with real-time updates using Firebase. Features include task creation, assignment, progress tracking, team collaboration, and push notifications. Built as a Progressive Web App for offline functionality.',
-        tech: ['Vue.js', 'Firebase', 'Vuex', 'PWA', 'Service Workers', 'Push Notifications'],
+        title: 'Arogya-AI',
+        description: 'Helping doctors & patients overcome language barriers. An AI-powered healthcare communication platform that provides real-time translation and medical terminology assistance to ensure effective communication between healthcare providers and patients from different linguistic backgrounds.',
+        tech: ['TypeScript', 'Python', 'PLpgSQL'],
         demo: '#',
-        github: '#'
+        github: 'https://github.com/saurabh12nxf/Vibeathon.git'
     },
     {
-        title: 'Portfolio CMS',
-        description: 'A headless CMS solution specifically designed for creative professionals to showcase their work. Features include drag-and-drop portfolio builder, custom themes, SEO optimization, and analytics integration. Built with Next.js for optimal performance.',
-        tech: ['Next.js', 'Strapi', 'GraphQL', 'PostgreSQL', 'Tailwind CSS', 'Vercel'],
+        title: 'Destinex',
+        description: 'Making Tourism ease with our Destinex. A comprehensive travel management platform that helps users plan, organize, and manage their trips with features like itinerary planning, destination recommendations, and travel booking assistance.',
+        tech: ['JavaScript', 'CSS', 'HTML'],
         demo: '#',
-        github: '#'
+        github: 'https://github.com/saurabh12nxf/Destinex-A-travel-manager.git'
     },
     {
-        title: 'Brand Identity Design',
-        description: 'Complete brand identity package for a tech startup including logo design, color palette, typography system, brand guidelines, marketing materials, and social media templates. Created a cohesive visual language that reflects the company\'s innovative spirit.',
-        tech: ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'Brand Strategy', 'UI/UX Design'],
+        title: 'Pathwise',
+        description: 'Helping Students to Generate personalised Path for their academic learning. An intelligent learning platform that creates customized study paths based on individual student needs, learning pace, and academic goals to optimize their educational journey.',
+        tech: ['JavaScript', 'HTML', 'CSS'],
         demo: '#',
-        github: '#'
+        github: 'https://github.com/saurabh12nxf/Path-wise.git'
     }
 ];
 
