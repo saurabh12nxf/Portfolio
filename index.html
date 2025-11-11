@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Saurabh Singh</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Portfolio</a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#dsa" class="nav-link">DSA</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Particle Background -->
+    <div id="particles"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="glitch" data-text="Your Name">Saurabh Singh</h1>
+                <p class="typing-text">I'm a <span id="typed-text"></span><span class="cursor">|</span></p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/saurabh12nxf" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/saurabh-singh-1696292ab/" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="mailto:saurabhsingh050806@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <div class="floating-card">
+                        <img src="img1.jpg" alt="Profile">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <div class="profile-img">
+                            <img src="img1.jpg" alt="Profile Picture">
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Hello! I'm <span class="highlight">Saurabh Singh</span></h3>
+                    <p>I'm a passionate developer with expertise in creating innovative digital solutions. With a strong
+                        foundation in modern web technologies, I transform ideas into elegant, functional applications.
+                    </p>
+                    <p>My journey in tech has been driven by curiosity and a commitment to continuous learning. I
+                        specialize in building responsive, user-centric experiences that make a difference.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h4>1+</h4>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>5+</h4>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>3+</h4>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Frontend</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>HTML/CSS</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>JavaScript</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>React</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> Backend</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Node.js</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Python</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Database</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="75"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools & Others</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Git/GitHub</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>UI/UX Design</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>DevOps</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="65"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DSA Section -->
+    <section id="dsa" class="dsa">
+        <div class="container">
+            <h2 class="section-title">DSA & Problem Solving</h2>
+            <div class="dsa-intro">
+                <p>Passionate about Data Structures & Algorithms with a strong focus on <span
+                        class="highlight-java">Java</span></p>
+            </div>
+            <div class="dsa-content">
+                <div class="dsa-stats-grid">
+                    <div class="dsa-stat-card">
+                        <div class="dsa-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>500+</h3>
+                        <p>Problems Solved</p>
+                        <span class="dsa-badge">Java</span>
+                    </div>
+                    <div class="dsa-stat-card">
+                        <div class="dsa-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>LeetCode</h3>
+                        <p>Active Contributor</p>
+                        <span class="dsa-badge">Java</span>
+                    </div>
+                    <div class="dsa-stat-card">
+                        <div class="dsa-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Advanced</h3>
+                        <p>Problem Solving</p>
+                        <span class="dsa-badge">Java</span>
+                    </div>
+                    <div class="dsa-stat-card">
+                        <div class="dsa-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Algorithms</h3>
+                        <p>Expert Level</p>
+                        <span class="dsa-badge">Java</span>
+                    </div>
+                </div>
+
+                <div class="dsa-topics">
+                    <h3>Core Competencies in Java</h3>
+                    <div class="topics-grid">
+                        <div class="topic-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Arrays & Strings</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Linked Lists</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Stacks & Queues</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Trees & Graphs</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Dynamic Programming</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Sorting & Searching</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Recursion & Backtracking</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Greedy Algorithms</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Hash Tables</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Heaps & Priority Queues</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Bit Manipulation</span>
+                        </div>
+                        <div class="topic-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Graph Algorithms</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dsa-platforms">
+                    <h3>Coding Platforms</h3>
+                    <div class="platforms-grid">
+                        <a href="#" class="platform-card" target="_blank">
+                            <i class="fas fa-code"></i>
+                            <h4>LeetCode</h4>
+                            <p>View Profile</p>
+                        </a>
+                        <a href="#" class="platform-card" target="_blank">
+                            <i class="fas fa-laptop-code"></i>
+                            <h4>HackerRank</h4>
+                            <p>View Profile</p>
+                        </a>
+                        <a href="#" class="platform-card" target="_blank">
+                            <i class="fas fa-terminal"></i>
+                            <h4>CodeChef</h4>
+                            <p>View Profile</p>
+                        </a>
+                        <a href="#" class="platform-card" target="_blank">
+                            <i class="fas fa-code-branch"></i>
+                            <h4>Codeforces</h4>
+                            <p>View Profile</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects"></section>
+    <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card" data-category="web">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <button class="btn-view" onclick="openModal(0)">View Details</button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>E-Commerce Platform</h3>
+                    <p>Full-stack e-commerce solution with payment integration</p>
+                    <div class="project-tags">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="app">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <button class="btn-view" onclick="openModal(1)">View Details</button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Task Management App</h3>
+                    <p>Collaborative task manager with real-time updates</p>
+                    <div class="project-tags">
+                        <span>Vue.js</span>
+                        <span>Firebase</span>
+                        <span>PWA</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="web">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <button class="btn-view" onclick="openModal(2)">View Details</button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Portfolio CMS</h3>
+                    <p>Content management system for creative professionals</p>
+                    <div class="project-tags">
+                        <span>Next.js</span>
+                        <span>Strapi</span>
+                        <span>GraphQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="design">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <button class="btn-view" onclick="openModal(3)">View Details</button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Brand Identity Design</h3>
+                    <p>Complete branding package for tech startup</p>
+                    <div class="project-tags">
+                        <span>Figma</span>
+                        <span>Illustrator</span>
+                        <span>Branding</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <h2 class="section-title">Achievements & Milestones</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <h3>Best Developer Award</h3>
+                        <p>Recognized for outstanding contribution to open-source projects</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023</div>
+                        <h3>Tech Conference Speaker</h3>
+                        <p>Presented on modern web development practices at TechCon 2023</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022</div>
+                        <h3>Certification Achievement</h3>
+                        <p>Completed AWS Solutions Architect Professional certification</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021</div>
+                        <h3>Hackathon Winner</h3>
+                        <p>First place in National Coding Hackathon with innovative solution</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's work together</h3>
+                    <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
+                        vision.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>saurabhsingh050806@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>City, Country</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" required>
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" required></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/saurabh12nxf" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/saurabh-singh-1696292ab/" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="mailto:saurabhsingh050806@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <h2 id="modalTitle"></h2>
+                <div id="modalDescription"></div>
+                <div id="modalTech"></div>
+                <div class="modal-links">
+                    <a href="#" class="btn btn-primary" target="_blank">Live Demo</a>
+                    <a href="#" class="btn btn-secondary" target="_blank">Source Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+</div>

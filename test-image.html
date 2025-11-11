@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #111;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+        }
+        .image-box {
+            width: 400px;
+            height: 400px;
+            margin: 20px auto;
+            border: 3px solid #6366f1;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Image Loading Test</h1>
+        <div class="image-box">
+            <img src="img.jpg" alt="Test Image">
+        </div>
+        <p style="color: white; text-align: center;">If you see your image above, the file path is correct!</p>
+    </div>
+</body>
+</html>
