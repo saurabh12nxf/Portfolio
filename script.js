@@ -1,3 +1,96 @@
+// ===== Live Time Display =====
+function updateLiveTime() {
+    const now = new Date();
+    
+    // Format time (12-hour format with am/pm)
+    let hours = now.getHours();
+    const minutes = now.getMinutes();
+    const ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // 0 should be 12
+    const minutesStr = minutes < 10 ? '0' + minutes : minutes;
+    const timeString = `${hours}:${minutesStr} ${ampm}`;
+    
+    // Format date (Month Day)
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                    'July', 'August', 'September', 'October', 'November', 'December'];
+    const dateString = `${months[now.getMonth()]} ${now.getDate()}`;
+    
+    // Update DOM
+    const timeDisplay = document.getElementById('liveTime');
+    const dateDisplay = document.getElementById('liveDate');
+    
+    if (timeDisplay) timeDisplay.textContent = timeString;
+    if (dateDisplay) dateDisplay.textContent = dateString;
+}
+
+// Update time immediately and then every second
+updateLiveTime();
+setInterval(updateLiveTime, 1000);
+
+// ===== Motivational Quotes =====
+const quotes = [
+    { text: "Code is like humor. When you have to explain it, it's bad.", author: "Cory House" },
+    { text: "First, solve the problem. Then, write the code.", author: "John Johnson" },
+    { text: "Experience is the name everyone gives to their mistakes.", author: "Oscar Wilde" },
+    { text: "In order to be irreplaceable, one must always be different.", author: "Coco Chanel" },
+    { text: "Java is to JavaScript what car is to Carpet.", author: "Chris Heilmann" },
+    { text: "Knowledge is power.", author: "Francis Bacon" },
+    { text: "Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday's code.", author: "Dan Salomon" },
+    { text: "Perfection is achieved not when there is nothing more to add, but rather when there is nothing more to take away.", author: "Antoine de Saint-Exupery" },
+    { text: "Code never lies, comments sometimes do.", author: "Ron Jeffries" },
+    { text: "Simplicity is the soul of efficiency.", author: "Austin Freeman" },
+    { text: "Make it work, make it right, make it fast.", author: "Kent Beck" },
+    { text: "The best error message is the one that never shows up.", author: "Thomas Fuchs" },
+    { text: "Programming isn't about what you know; it's about what you can figure out.", author: "Chris Pine" },
+    { text: "The only way to learn a new programming language is by writing programs in it.", author: "Dennis Ritchie" },
+    { text: "Talk is cheap. Show me the code.", author: "Linus Torvalds" }
+];
+
+let currentQuoteIndex = 0;
+
+function displayQuote(index) {
+    const quoteText = document.getElementById('quoteText');
+    const quoteAuthor = document.getElementById('quoteAuthor');
+    
+    if (quoteText && quoteAuthor) {
+        // Fade out
+        quoteText.style.opacity = '0';
+        quoteAuthor.style.opacity = '0';
+        
+        setTimeout(() => {
+            quoteText.textContent = quotes[index].text;
+            quoteAuthor.textContent = `- ${quotes[index].author}`;
+            
+            // Fade in
+            quoteText.style.opacity = '1';
+            quoteAuthor.style.opacity = '1';
+        }, 300);
+    }
+}
+
+function getRandomQuote() {
+    let newIndex;
+    do {
+        newIndex = Math.floor(Math.random() * quotes.length);
+    } while (newIndex === currentQuoteIndex && quotes.length > 1);
+    
+    currentQuoteIndex = newIndex;
+    displayQuote(currentQuoteIndex);
+}
+
+// Add click event to quote button
+const quoteBtn = document.getElementById('newQuoteBtn');
+if (quoteBtn) {
+    quoteBtn.addEventListener('click', getRandomQuote);
+}
+
+// Add transition styles
+const quoteText = document.getElementById('quoteText');
+const quoteAuthor = document.getElementById('quoteAuthor');
+if (quoteText) quoteText.style.transition = 'opacity 0.3s ease';
+if (quoteAuthor) quoteAuthor.style.transition = 'opacity 0.3s ease';
+
 // ===== Theme Toggle =====
 const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
@@ -24,17 +117,21 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
-
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
     });
-});
+}
+
+if (navLinks.length > 0) {
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu) navMenu.classList.remove('active');
+            if (hamburger) hamburger.classList.remove('active');
+        });
+    });
+}
 
 // ===== Typing Effect =====
 const typedTextSpan = document.getElementById('typed-text');
@@ -130,6 +227,55 @@ document.querySelectorAll('.skill-category').forEach(category => {
     observer.observe(category);
 });
 
+// Animate skill bars - Simple and direct approach
+function animateSkillBars() {
+    const skillBars = document.querySelectorAll('.skill-progress');
+    console.log('Animating skill bars, found:', skillBars.length);
+    
+    skillBars.forEach((bar, index) => {
+        const progress = bar.getAttribute('data-progress');
+        console.log(`Bar ${index}: progress = ${progress}, current width = ${bar.style.width}`);
+        
+        if (progress) {
+            // Force set the width
+            setTimeout(() => {
+                bar.style.width = progress + '%';
+                console.log(`Set bar ${index} to ${progress}%`);
+            }, index * 100);
+        }
+    });
+}
+
+// Force animate immediately when script loads
+setTimeout(() => {
+    console.log('Force animating skill bars...');
+    animateSkillBars();
+}, 500);
+
+// Multiple triggers to ensure it works
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(animateSkillBars, 1000);
+});
+
+window.addEventListener('load', () => {
+    setTimeout(animateSkillBars, 1500);
+});
+
+// Animate on scroll
+let hasAnimated = false;
+window.addEventListener('scroll', () => {
+    if (hasAnimated) return;
+    
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection) {
+        const rect = skillsSection.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            animateSkillBars();
+            hasAnimated = true;
+        }
+    }
+});
+
 // ===== Smooth Scroll =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -146,14 +292,36 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // ===== Navbar Background on Scroll =====
 window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.background = 'var(--bg-glass)';
-        navbar.style.boxShadow = 'none';
+    const navbar = document.querySelector('.navbar-top');
+    if (navbar) {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     }
+});
+
+// ===== Bottom Navigation Active Link =====
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const bottomNavLinks = document.querySelectorAll('.bottom-nav-link');
+    
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    bottomNavLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
 });
 
 // ===== Project Modal =====
