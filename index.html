@@ -290,7 +290,8 @@
         <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
             <div class="project-card" data-category="web">
-                <div class="project-image">
+                <div class="project-image"
+                    style="background-image: url('Gemini_Generated_Image_kmn95kkmn95kkmn9.png');">
                     <div class="project-overlay">
                         <button class="btn-view" onclick="openModal(0)">View Details</button>
                     </div>
@@ -309,7 +310,8 @@
             </div>
 
             <div class="project-card" data-category="app">
-                <div class="project-image">
+                <div class="project-image"
+                    style="background-image: url('Gemini_Generated_Image_jc6mjbjc6mjbjc6m.png');">
                     <div class="project-overlay">
                         <button class="btn-view" onclick="openModal(1)">View Details</button>
                     </div>
@@ -326,7 +328,8 @@
             </div>
 
             <div class="project-card" data-category="web">
-                <div class="project-image">
+                <div class="project-image"
+                    style="background-image: url('Gemini_Generated_Image_bqlr04bqlr04bqlr.png');">
                     <div class="project-overlay">
                         <button class="btn-view" onclick="openModal(2)">View Details</button>
                     </div>
@@ -343,7 +346,8 @@
             </div>
 
             <div class="project-card" data-category="design">
-                <div class="project-image">
+                <div class="project-image"
+                    style="background-image: url('Gemini_Generated_Image_1h929f1h929f1h92.png');">
                     <div class="project-overlay">
                         <button class="btn-view" onclick="openModal(3)">View Details</button>
                     </div>
@@ -370,21 +374,21 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2024</div>
-                        <h3>Best Developer Award</h3>
-                        <p>Recognized for outstanding contribution to open-source projects</p>
+                        <div class="timeline-date">2025</div>
+                        <h3>Vibeathon Hackathon </h3>
+                        <p>Our team came in top 20 among 296+ teams</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
+                <!-- <div class="timeline-item"> -->
+                <!-- <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">2023</div>
                         <h3>Tech Conference Speaker</h3>
                         <p>Presented on modern web development practices at TechCon 2023</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
+                <div class="timeline-item"> -->
+                <!-- <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">2022</div>
                         <h3>Certification Achievement</h3>
@@ -397,9 +401,9 @@
                         <div class="timeline-date">2021</div>
                         <h3>Hackathon Winner</h3>
                         <p>First place in National Coding Hackathon with innovative solution</p>
-                    </div>
-                </div>
+                    </div> -->
             </div>
+        </div>
         </div>
     </section>
 
@@ -420,40 +424,41 @@
                                 <p>saurabhsingh050806@gmail.com</p>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
+                        <!-- <div class="contact-item">
+                            <i class="fas fa-phone"></i> -->
+                        <!-- <div>
                                 <h4>Phone</h4>
                                 <p>+1 (555) 123-4567</p>
-                            </div>
-                        </div>
+                            </div> -->
+                        <!-- </div> -->
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <h4>Location</h4>
-                                <p>City, Country</p>
+                                <p>Bangalore, India</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
-                        <input type="text" id="name" required>
+                        <input type="text" id="name" name="name" required>
                         <label for="name">Your Name</label>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" required>
+                        <input type="email" id="email" name="email" required>
                         <label for="email">Your Email</label>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="subject" required>
+                        <input type="text" id="subject" name="subject" required>
                         <label for="subject">Subject</label>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" rows="5" required></textarea>
+                        <textarea id="message" name="message" rows="5" required></textarea>
                         <label for="message">Message</label>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
+                    <p id="form-status"></p>
                 </form>
             </div>
         </div>

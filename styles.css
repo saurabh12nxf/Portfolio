@@ -738,6 +738,9 @@ body {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     position: relative;
     overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .project-overlay {
@@ -987,6 +990,19 @@ body {
     color: var(--primary-color);
     background: var(--bg-primary);
     padding: 0 0.5rem;
+}
+
+#form-status {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    min-height: 24px;
+}
+
+.contact-form button[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 /* ===== Footer ===== */

@@ -226,22 +226,39 @@ window.addEventListener('click', (e) => {
 
 // ===== Contact Form =====
 const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('form-status');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    
-    // Here you would typically send the form data to a server
-    console.log('Form submitted:', { name, email, subject, message });
-    
-    // Show success message
-    alert('Thank you for your message! I will get back to you soon.');
-    contactForm.reset();
-});
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // Create mailto link with form data
+        const mailtoLink = `mailto:saurabhsingh050806@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+            `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+        )}`;
+        
+        // Open email client
+        window.location.href = mailtoLink;
+        
+        // Show success message
+        formStatus.textContent = '✓ Opening your email client... Please send the email to complete your message.';
+        formStatus.style.color = '#10b981';
+        formStatus.style.marginTop = '1rem';
+        formStatus.style.textAlign = 'center';
+        formStatus.style.fontWeight = '600';
+        
+        // Reset form after a delay
+        setTimeout(() => {
+            contactForm.reset();
+            formStatus.textContent = '';
+        }, 3000);
+    });
+}
 
 // ===== Active Navigation Link =====
 window.addEventListener('scroll', () => {
