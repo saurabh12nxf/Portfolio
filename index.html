@@ -6,10 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Saurabh Singh</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="advanced-animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Loading Animation -->
+    <div class="loader-wrapper" id="loaderWrapper">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">Loading...</div>
+        </div>
+    </div>
+
+    <!-- Custom Magnetic Cursor -->
+    <div class="magnetic-cursor" id="magneticCursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
     <!-- Theme Toggle -->
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
         <i class="fas fa-moon"></i>
@@ -68,6 +84,9 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <!-- Gradient Mesh Background -->
+        <div class="gradient-mesh-bg"></div>
+
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="glitch" data-text="Your Name">Saurabh Singh</h1>
@@ -134,6 +153,75 @@
         </div>
     </section>
 
+    <!-- Bento Grid Section -->
+    <section class="bento-section">
+        <div class="container">
+            <h2 class="section-title">Quick Insights</h2>
+            <div class="bento-grid">
+                <div class="bento-card bento-large tilt-card">
+                    <div class="bento-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Based in</h3>
+                    <p class="bento-value">Bangalore, India</p>
+                    <div class="live-clock" id="bentoClock">20:14 PM</div>
+                </div>
+
+                <div class="bento-card bento-medium tilt-card">
+                    <div class="bento-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Favorite Stack</h3>
+                    <div class="tech-icons">
+                        <span title="React">⚛️</span>
+                        <span title="Node.js">🟢</span>
+                        <span title="Python">🐍</span>
+                        <span title="Java">☕</span>
+                    </div>
+                </div>
+
+                <div class="bento-card bento-small tilt-card">
+                    <div class="bento-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3>Coffee Consumed</h3>
+                    <p class="bento-stat">∞</p>
+                </div>
+
+                <div class="bento-card bento-medium tilt-card">
+                    <div class="bento-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Status</h3>
+                    <div class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span>Available for opportunities</span>
+                    </div>
+                </div>
+
+                <div class="bento-card bento-small tilt-card">
+                    <div class="bento-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Streak</h3>
+                    <p class="bento-stat">365+</p>
+                    <small>Days coding</small>
+                </div>
+
+                <div class="bento-card bento-large tilt-card">
+                    <div class="bento-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Fun Fact</h3>
+                    <p class="fun-fact" id="funFact">I debug code faster than I debug my life! 🐛</p>
+                    <button class="fact-refresh" id="factRefresh">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Quote Section -->
     <section class="quote-section">
         <div class="container">
@@ -149,104 +237,158 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills"></section>
-    <div class="container">
-        <h2 class="section-title">Skills & Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3><i class="fas fa-code"></i> Frontend</h3>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span>HTML/CSS</span>
-                        <span>90%</span>
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-circular-grid">
+                <!-- Frontend Skills -->
+                <div class="skill-circular-item tilt-card">
+                    <div class="circular-progress">
+                        <svg width="120" height="120">
+                            <circle cx="60" cy="60" r="45" stroke="#e5e7eb" stroke-width="8" fill="none" />
+                            <circle cx="60" cy="60" r="45" stroke="url(#gradient1)" stroke-width="8" fill="none"
+                                stroke-dasharray="283" stroke-dashoffset="28.3" class="progress-circle"
+                                data-progress="90" />
+                        </svg>
+                        <div class="progress-value">90%</div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="90"></div>
-                    </div>
+                    <h3>HTML/CSS</h3>
+                    <p>Expert</p>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span>JavaScript</span>
-                        <span>85%</span>
+
+                <div class="skill-circular-item tilt-card">
+                    <div class="circular-progress">
+                        <svg width="120" height="120">
+                            <circle cx="60" cy="60" r="45" stroke="#e5e7eb" stroke-width="8" fill="none" />
+                            <circle cx="60" cy="60" r="45" stroke="url(#gradient1)" stroke-width="8" fill="none"
+                                stroke-dasharray="283" stroke-dashoffset="42.45" class="progress-circle"
+                                data-progress="85" />
+                        </svg>
+                        <div class="progress-value">85%</div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="85"></div>
-                    </div>
+                    <h3>JavaScript</h3>
+                    <p>Advanced</p>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span>React</span>
-                        <span>80%</span>
+
+                <div class="skill-circular-item tilt-card">
+                    <div class="circular-progress">
+                        <svg width="120" height="120">
+                            <circle cx="60" cy="60" r="45" stroke="#e5e7eb" stroke-width="8" fill="none" />
+                            <circle cx="60" cy="60" r="45" stroke="url(#gradient1)" stroke-width="8" fill="none"
+                                stroke-dasharray="283" stroke-dashoffset="56.6" class="progress-circle"
+                                data-progress="80" />
+                        </svg>
+                        <div class="progress-value">80%</div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="80"></div>
+                    <h3>React</h3>
+                    <p>Advanced</p>
+                </div>
+
+                <!-- Backend Skills -->
+                <div class="skill-circular-item tilt-card">
+                    <div class="circular-progress">
+                        <svg width="120" height="120">
+                            <circle cx="60" cy="60" r="45" stroke="#e5e7eb" stroke-width="8" fill="none" />
+                            <circle cx="60" cy="60" r="45" stroke="url(#gradient2)" stroke-width="8" fill="none"
+                                stroke-dasharray="283" stroke-dashoffset="70.75" class="progress-circle"
+                                data-progress="75" />
+                        </svg>
+                        <div class="progress-value">75%</div>
                     </div>
+                    <h3>Node.js</h3>
+                    <p>Intermediate</p>
+                </div>
+
+                <div class="skill-circular-item tilt-card">
+                    <div class="circular-progress">
+                        <svg width="120" height="120">
+                            <circle cx="60" cy="60" r="45" stroke="#e5e7eb" stroke-width="8" fill="none" />
+                            <circle cx="60" cy="60" r="45" stroke="url(#gradient2)" stroke-width="8" fill="none"
+                                stroke-dasharray="283" stroke-dashoffset="84.9" class="progress-circle"
+                                data-progress="70" />
+                        </svg>
+                        <div class="progress-value">70%</div>
+                    </div>
+                    <h3>Python</h3>
+                    <p>Intermediate</p>
+                </div>
+
+                <div class="skill-circular-item tilt-card">
+                    <div class="circular-progress">
+                        <svg width="120" height="120">
+                            <circle cx="60" cy="60" r="45" stroke="#e5e7eb" stroke-width="8" fill="none" />
+                            <circle cx="60" cy="60" r="45" stroke="url(#gradient2)" stroke-width="8" fill="none"
+                                stroke-dasharray="283" stroke-dashoffset="70.75" class="progress-circle"
+                                data-progress="75" />
+                        </svg>
+                        <div class="progress-value">75%</div>
+                    </div>
+                    <h3>Database</h3>
+                    <p>Intermediate</p>
+                </div>
+
+                <!-- Tools & Others -->
+                <div class="skill-circular-item tilt-card">
+                    <div class="circular-progress">
+                        <svg width="120" height="120">
+                            <circle cx="60" cy="60" r="45" stroke="#e5e7eb" stroke-width="8" fill="none" />
+                            <circle cx="60" cy="60" r="45" stroke="url(#gradient3)" stroke-width="8" fill="none"
+                                stroke-dasharray="283" stroke-dashoffset="42.45" class="progress-circle"
+                                data-progress="85" />
+                        </svg>
+                        <div class="progress-value">85%</div>
+                    </div>
+                    <h3>Git/GitHub</h3>
+                    <p>Advanced</p>
+                </div>
+
+                <div class="skill-circular-item tilt-card">
+                    <div class="circular-progress">
+                        <svg width="120" height="120">
+                            <circle cx="60" cy="60" r="45" stroke="#e5e7eb" stroke-width="8" fill="none" />
+                            <circle cx="60" cy="60" r="45" stroke="url(#gradient3)" stroke-width="8" fill="none"
+                                stroke-dasharray="283" stroke-dashoffset="84.9" class="progress-circle"
+                                data-progress="70" />
+                        </svg>
+                        <div class="progress-value">70%</div>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>Intermediate</p>
+                </div>
+
+                <div class="skill-circular-item tilt-card">
+                    <div class="circular-progress">
+                        <svg width="120" height="120">
+                            <circle cx="60" cy="60" r="45" stroke="#e5e7eb" stroke-width="8" fill="none" />
+                            <circle cx="60" cy="60" r="45" stroke="url(#gradient3)" stroke-width="8" fill="none"
+                                stroke-dasharray="283" stroke-dashoffset="99.05" class="progress-circle"
+                                data-progress="65" />
+                        </svg>
+                        <div class="progress-value">65%</div>
+                    </div>
+                    <h3>DevOps</h3>
+                    <p>Beginner</p>
                 </div>
             </div>
 
-            <div class="skill-category">
-                <h3><i class="fas fa-server"></i> Backend</h3>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span>Node.js</span>
-                        <span>75%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="75"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span>Python</span>
-                        <span>70%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="70"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span>Database</span>
-                        <span>75%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="75"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3><i class="fas fa-tools"></i> Tools & Others</h3>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span>Git/GitHub</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="85"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span>UI/UX Design</span>
-                        <span>70%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="70"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span>DevOps</span>
-                        <span>65%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="65"></div>
-                    </div>
-                </div>
-            </div>
+            <!-- SVG Gradients Definition -->
+            <svg width="0" height="0">
+                <defs>
+                    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
         </div>
-    </div>
     </section>
 
     <!-- DSA Section -->
@@ -330,7 +472,7 @@
     <div class="container">
         <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
-            <div class="project-card" data-category="web">
+            <div class="project-card tilt-card" data-category="web">
                 <div class="project-image"
                     style="background-image: url('Gemini_Generated_Image_kmn95kkmn95kkmn9.png');">
                     <div class="project-overlay">
@@ -350,7 +492,7 @@
                 </div>
             </div>
 
-            <div class="project-card" data-category="app">
+            <div class="project-card tilt-card" data-category="app">
                 <div class="project-image"
                     style="background-image: url('Gemini_Generated_Image_jc6mjbjc6mjbjc6m.png');">
                     <div class="project-overlay">
@@ -368,7 +510,7 @@
                 </div>
             </div>
 
-            <div class="project-card" data-category="web">
+            <div class="project-card tilt-card" data-category="web">
                 <div class="project-image"
                     style="background-image: url('Gemini_Generated_Image_bqlr04bqlr04bqlr.png');">
                     <div class="project-overlay">
@@ -386,7 +528,7 @@
                 </div>
             </div>
 
-            <div class="project-card" data-category="design">
+            <div class="project-card tilt-card" data-category="design">
                 <div class="project-image"
                     style="background-image: url('Gemini_Generated_Image_1h929f1h929f1h92.png');">
                     <div class="project-overlay">
@@ -542,6 +684,21 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="enhanced-features.js"></script>
+
+    <!-- Fallback to hide loader if JS fails -->
+    <script>
+        // Ensure loader hides even if there's an error
+        setTimeout(function () {
+            var loader = document.getElementById('loaderWrapper');
+            if (loader) {
+                loader.classList.add('hidden');
+                setTimeout(function () {
+                    loader.style.display = 'none';
+                }, 500);
+            }
+        }, 2000);
+    </script>
 </body>
 
 </html>
