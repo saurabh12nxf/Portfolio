@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="advanced-animations.css">
     <link rel="stylesheet" href="terminal-styles.css">
+    <link rel="stylesheet" href="music-player.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -253,17 +254,34 @@
                     <small>Days</small>
                 </div>
 
-                <!-- Spotify Card (Dynamic) -->
-                <div class="bento-card bento-medium tilt-card spotify-status">
+
+                <!-- Music Player Card (Interactive) -->
+                <div class="bento-card bento-medium tilt-card music-player-card">
                     <div class="bento-icon">
-                        <i class="fab fa-spotify" style="color: #1DB954;"></i>
+                        <i class="fas fa-music" style="color: #1DB954;"></i>
                     </div>
-                    <h3>Now Playing</h3>
-                    <div class="spotify-info">
-                        <div class="song-title">Blinding Lights</div>
-                        <div class="song-artist">The Weeknd</div>
-                        <div class="music-bars">
-                            <span></span><span></span><span></span><span></span>
+                    <h3>Music Player</h3>
+                    <div class="music-player-info">
+                        <div class="track-title">Cyberpunk Dreams</div>
+                        <div class="track-artist">Synthwave</div>
+                        <div class="music-controls">
+                            <button class="music-btn" id="prevTrack" title="Previous">
+                                <i class="fas fa-step-backward"></i>
+                            </button>
+                            <button class="music-btn music-play-pause" id="playPause" title="Play/Pause">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="music-btn" id="nextTrack" title="Next">
+                                <i class="fas fa-step-forward"></i>
+                            </button>
+                        </div>
+                        <div class="volume-control">
+                            <i class="fas fa-volume-down"></i>
+                            <input type="range" id="volumeSlider" min="0" max="100" value="50" class="volume-slider">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                        <div class="music-visualizer">
+                            <span></span><span></span><span></span><span></span><span></span>
                         </div>
                     </div>
                 </div>
@@ -732,6 +750,7 @@
 
     <script src="script.js"></script>
     <script src="enhanced-features.js"></script>
+    <script src="music-player.js"></script>
     <script src="terminal-boot.js"></script>
     <script src="terminal-features.js"></script>
     <script src="dynamic-bento.js"></script>

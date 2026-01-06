@@ -79,6 +79,14 @@ class TerminalBoot {
 
         // Wait for user interaction or auto-proceed
         await this.waitForUser();
+
+        // Show music choice dialog
+        const withMusic = await window.showMusicChoice();
+
+        // Initialize music player
+        window.musicPlayer = new window.MusicPlayer();
+        window.musicPlayer.init(withMusic);
+
         this.hideBoot();
     }
 
