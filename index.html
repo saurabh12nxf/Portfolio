@@ -7,6 +7,7 @@
     <title>Portfolio - Saurabh Singh</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="advanced-animations.css">
+    <link rel="stylesheet" href="terminal-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -34,10 +35,7 @@
     <!-- Top Navigation -->
     <nav class="navbar-top">
         <div class="nav-container">
-            <a href="#home" class="logo-3d">
-                <span class="logo-text" data-text="Hello!">Hello!</span>
-                <span class="wave-emoji">👋</span>
-            </a>
+            <!-- Logo removed to eliminate circle -->
             <div class="live-time">
                 <div class="time-display" id="liveTime">10:01 pm</div>
                 <div class="date-display" id="liveDate">November 12</div>
@@ -89,7 +87,7 @@
 
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="glitch" data-text="Your Name">Saurabh Singh</h1>
+                <h1 class="glitch" data-text="Saurabh Singh">Saurabh Singh</h1>
                 <p class="typing-text">I'm a <span id="typed-text"></span><span class="cursor">|</span></p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -158,6 +156,7 @@
         <div class="container">
             <h2 class="section-title">Quick Insights</h2>
             <div class="bento-grid">
+                <!-- Location & Time Card -->
                 <div class="bento-card bento-large tilt-card">
                     <div class="bento-icon">
                         <i class="fas fa-map-marker-alt"></i>
@@ -167,6 +166,26 @@
                     <div class="live-clock" id="bentoClock">20:14 PM</div>
                 </div>
 
+                <!-- Current Activity Card (Dynamic) -->
+                <div class="bento-card bento-medium tilt-card activity-status">
+                    <div class="bento-icon">
+                        <span style="font-size: 2rem;">💻</span>
+                    </div>
+                    <h3>Current Activity</h3>
+                    <p class="bento-value">Coding</p>
+                </div>
+
+                <!-- Weather Card (Dynamic) -->
+                <div class="bento-card bento-small tilt-card weather-status">
+                    <div class="bento-icon">
+                        <span style="font-size: 2rem;">☀️</span>
+                    </div>
+                    <h3>Bangalore</h3>
+                    <p class="bento-value">28°C</p>
+                    <small>Sunny</small>
+                </div>
+
+                <!-- Favorite Stack Card -->
                 <div class="bento-card bento-medium tilt-card">
                     <div class="bento-icon">
                         <i class="fas fa-code"></i>
@@ -180,34 +199,76 @@
                     </div>
                 </div>
 
-                <div class="bento-card bento-small tilt-card">
+                <!-- Coding Stats Card (Dynamic) -->
+                <div class="bento-card bento-small tilt-card coding-stats">
                     <div class="bento-icon">
-                        <i class="fas fa-coffee"></i>
+                        <i class="fas fa-code"></i>
                     </div>
-                    <h3>Coffee Consumed</h3>
-                    <p class="bento-stat">∞</p>
+                    <h3>Today's Stats</h3>
+                    <div style="font-size: 0.9rem; margin-top: 0.5rem;">
+                        <div>Lines: <span style="color: var(--terminal-green);">342</span></div>
+                        <div>Commits: <span style="color: var(--terminal-cyan);">12</span></div>
+                    </div>
                 </div>
 
-                <div class="bento-card bento-medium tilt-card">
+                <!-- Status Indicator Card -->
+                <div class="bento-card bento-small tilt-card">
                     <div class="bento-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
                     <h3>Status</h3>
                     <div class="status-indicator">
-                        <span class="status-dot"></span>
-                        <span>Available for opportunities</span>
+                        <div class="status-dot"></div>
+                        <span>Available for work</span>
                     </div>
                 </div>
 
+                <!-- Mood Card (Dynamic) -->
+                <div class="bento-card bento-small tilt-card mood-status">
+                    <div class="bento-icon">
+                        <span style="font-size: 2rem;">🔥</span>
+                    </div>
+                    <h3>Current Mood</h3>
+                    <p class="bento-value">On Fire!</p>
+                </div>
+
+                <!-- GitHub Contributions Card (Dynamic) -->
+                <div class="bento-card bento-large tilt-card github-graph">
+                    <div class="bento-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>This Week</h3>
+                    <div class="contribution-graph">
+                        <!-- Dynamically generated -->
+                    </div>
+                </div>
+
+                <!-- Coding Streak Card -->
                 <div class="bento-card bento-small tilt-card">
                     <div class="bento-icon">
                         <i class="fas fa-fire"></i>
                     </div>
-                    <h3>Streak</h3>
+                    <h3>Coding Streak</h3>
                     <p class="bento-stat">365+</p>
-                    <small>Days coding</small>
+                    <small>Days</small>
                 </div>
 
+                <!-- Spotify Card (Dynamic) -->
+                <div class="bento-card bento-medium tilt-card spotify-status">
+                    <div class="bento-icon">
+                        <i class="fab fa-spotify" style="color: #1DB954;"></i>
+                    </div>
+                    <h3>Now Playing</h3>
+                    <div class="spotify-info">
+                        <div class="song-title">Blinding Lights</div>
+                        <div class="song-artist">The Weeknd</div>
+                        <div class="music-bars">
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fun Facts Card -->
                 <div class="bento-card bento-large tilt-card">
                     <div class="bento-icon">
                         <i class="fas fa-lightbulb"></i>
@@ -218,20 +279,6 @@
                         <i class="fas fa-sync-alt"></i>
                     </button>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quote Section -->
-    <section class="quote-section">
-        <div class="container">
-            <div class="quote-container">
-                <i class="fas fa-quote-left quote-icon"></i>
-                <p class="quote-text" id="quoteText">Code is like humor. When you have to explain it, it's bad.</p>
-                <p class="quote-author" id="quoteAuthor">- Cory House</p>
-                <button class="quote-btn" id="newQuoteBtn">
-                    <i class="fas fa-sync-alt"></i> New Quote
-                </button>
             </div>
         </div>
     </section>
@@ -685,6 +732,10 @@
 
     <script src="script.js"></script>
     <script src="enhanced-features.js"></script>
+    <script src="terminal-boot.js"></script>
+    <script src="terminal-features.js"></script>
+    <script src="dynamic-bento.js"></script>
+    <script src="fun-facts.js"></script>
 
     <!-- Fallback to hide loader if JS fails -->
     <script>

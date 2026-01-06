@@ -69,7 +69,8 @@ body {
     height: 50px;
     border-radius: 50%;
     cursor: pointer;
-    display: flex;
+    display: none;
+    /* Hidden for terminal theme */
     align-items: center;
     justify-content: center;
     color: var(--text-primary);
